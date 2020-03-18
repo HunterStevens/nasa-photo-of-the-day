@@ -54,4 +54,7 @@ body{
 .description{
   background-color: rgba(50, 50, 50, 0.7);
   color: white;
+  margin: 10%;
+  padding:1%;
+  border-radius: 10px;
 }
