@@ -2,10 +2,12 @@ import React from 'react';
 
 const PhotoPage = props =>{
    
-   // document.querySelector('.mainPhoto').setAttribute =(backgroundImgae, {props.image});
+  // document.querySelector('.mainPhoto').style.backgroundImage =`url(${props.image})`;
 
     return(
-    <section className = "mainPhoto" background={props.image}>
+    <section className = "mainPhoto" 
+    style = {{backgroundImage: "url("+ props.image + ")" }}>
+        
         <section className = "description">
         <h3 className = "photo-date">
             {props.date}
