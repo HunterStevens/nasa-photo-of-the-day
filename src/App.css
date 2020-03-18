@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.mainPhoto{
+  background-image: url({props.image});
+
+}
+
+.photo-date{
+  background-color: rgba(50, 50, 50, 0.5);
+}
