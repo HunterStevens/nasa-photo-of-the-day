@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Container, Col, Collapse, Card, 
     CardBody, CardTitle, CardSubtitle, 
-    CardText, Button} from 'reactstrap';
+    CardText, Button, Row} from 'reactstrap';
 
 const PhotoPage = props =>{
     const [visible, setVisible] = useState(false);
@@ -9,11 +9,13 @@ const PhotoPage = props =>{
    
     return(
         <Container>
-            <Col sm="10">
+            <Row>
+            <Col lg={{size: 10, offset:2}}>
             <Card className = "mainPhoto"
             style = {{backgroundImage: "url("+ props.image + ")" }}>
                 
                 <Collapse isOpen={visible}>
+                    <Col sm = "4">
                     <CardBody className = "description">
                     <CardSubtitle className = "photo-date">
                         {props.date}
@@ -22,11 +24,15 @@ const PhotoPage = props =>{
                     <CardSubtitle>{props.author}</CardSubtitle>
                     <CardText>explanation: {props.explanation}</CardText>
                     </CardBody>
+                    </Col>
                 </Collapse>
+
             </Card>
+        <Button outline color="primary" onClick = {toggle}>Description</Button>
             </Col>
-            <Button outline color="primary" onClick = {toggle}>Description</Button>
+            </Row>
         </Container>
+
     )
 }
 export default PhotoPage;

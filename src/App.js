@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import "./App.css";
 import PhotoPage from './components/PhotoPage';
 import axios from 'axios';
+import { Container } from 'reactstrap';
+
 
 function App() {
   const [photo, setPhoto] = useState([]);
@@ -20,7 +22,7 @@ function App() {
 
 
   return (
-    <div className="App"> 
+    <Container className="App"> 
     <h1>Astronomy photo of the Day</h1>
       <PhotoPage date = {photo.date}
        image = {photo.url}
@@ -28,7 +30,7 @@ function App() {
        author = {photo.copyright}
        explanation = {photo.explanation}
        key ={photo}/>
-    </div>
+    </Container>
    
   );
 }
