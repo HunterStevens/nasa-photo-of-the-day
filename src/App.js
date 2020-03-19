@@ -2,7 +2,13 @@ import React, {useEffect, useState} from "react";
 import "./App.css";
 import PhotoPage from './components/PhotoPage';
 import axios from 'axios';
-import { Container } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
+import styled from 'styled-components';
+
+const WebTitle = styled.h1`
+font-family: 'Liu Jian Mao Cao', cursive;
+font-size: 50px;
+`;
 
 
 function App() {
@@ -23,13 +29,15 @@ function App() {
 
   return (
     <Container className="App"> 
-    <h1>Astronomy photo of the Day</h1>
+    <Row>
+    <WebTitle>Astronomy photo of the Day</WebTitle>
       <PhotoPage date = {photo.date}
        image = {photo.url}
        title = {photo.title}
        author = {photo.copyright}
        explanation = {photo.explanation}
        key ={photo}/>
+      </Row>
     </Container>
    
   );
